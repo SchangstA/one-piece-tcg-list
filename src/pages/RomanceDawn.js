@@ -249,16 +249,15 @@ export default function RomanceDawn() {
     
       return (
         <>
-          <h1>ROMANCE DAWN</h1>
-          <h3>SETLIST</h3>
+          <img className='img-card' src='https://en.onepiece-cardgame.com/images/products/boosters/op01/mv_01.jpg?v3' alt='romance dawn set'></img>
           <ul className='rarity-links'>
-            <li><a href='#common'>Common</a></li>
-            <li><a href='#uncommon'>Uncommon</a></li>
-            <li><a href='#leader'>Leader</a></li>
-            <li><a href='#rare'>Rare</a></li>
-            <li><a href='#superRare'>Super Rare</a></li>
-            <li><a href='#parallel'>Parallel</a></li>
-            <li><a href='#secret'>Secret Rare</a></li>
+            <li><a className='rarity-btn' href='#common'><button>Common</button></a></li>
+            <li><a className='rarity-btn' href='#uncommon'><button>Uncommon</button></a></li>
+            <li><a className='rarity-btn' href='#leader'><button>Leader</button></a></li>
+            <li><a className='rarity-btn' href='#rare'><button>Rare</button></a></li>
+            <li><a className='rarity-btn' href='#superRare'><button>Super Rare</button></a></li>
+            <li><a className='rarity-btn' href='#parallel'><button>Parallel</button></a></li>
+            <li><a className='rarity-btn' href='#secret'><button>Secret Rare</button></a></li>
           </ul>
 
           <h2 id="common">
@@ -289,7 +288,6 @@ export default function RomanceDawn() {
             Secret
           </h2>
           <div className='card'>{secretElements}</div>
-    
           {/* Render the expanded image if one is selected */}
           {expandedImage && (
             <ExpandedImage imageUrl={expandedImage} onClose={handleCloseExpandedImage} />

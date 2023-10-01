@@ -1,9 +1,11 @@
+import { Route, Routes } from "react-router-dom"
 import Navbar from "./Navbar"
 import Home from "./pages/Home"
 import ReleasedSets from "./pages/ReleasedSets"
 import RomanceDawn from "./pages/RomanceDawn"
 import ParamountWar from "./pages/ParamountWar"
-import { Route, Routes } from "react-router-dom"
+import PillarsofStrength from "./pages/PillarsofStrength"
+import KingdomsofIntrigue from "./pages/KingdomsofIntrigue"
 
 function App() {
   return (
@@ -26,6 +28,14 @@ function App() {
           <Route 
           path="/paramountwar" 
           element={<ParamountWar />} 
+          />
+          <Route 
+          path="/pillarsofstrength" 
+          element={<PillarsofStrength />} 
+          />
+                    <Route 
+          path="/kingdomsofintrigue" 
+          element={<KingdomsofIntrigue />} 
           />
         </Routes>
       </div>
