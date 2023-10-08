@@ -251,13 +251,13 @@ export default function ParamountWar() {
         <>
           <img className='img-card' src='https://en.onepiece-cardgame.com/images/products/boosters/op02/mv_01.jpg?v03' alt='paramount war set'></img>
           <ul className='rarity-links'>
-            <li><a className='rarity-btn' href='#common'><button>Common</button></a></li>
-            <li><a className='rarity-btn' href='#uncommon'><button>Uncommon</button></a></li>
-            <li><a className='rarity-btn' href='#leader'><button>Leader</button></a></li>
-            <li><a className='rarity-btn' href='#rare'><button>Rare</button></a></li>
-            <li><a className='rarity-btn' href='#superRare'><button>Super Rare</button></a></li>
-            <li><a className='rarity-btn' href='#parallel'><button>Parallel</button></a></li>
-            <li><a className='rarity-btn' href='#secret'><button>Secret Rare</button></a></li>
+            <li><a className='rarity-btn' href='#common'><button className='button'>Common</button></a></li>
+            <li><a className='rarity-btn' href='#uncommon'><button className='button'>Uncommon</button></a></li>
+            <li><a className='rarity-btn' href='#leader'><button className='button'>Leader</button></a></li>
+            <li><a className='rarity-btn' href='#rare'><button className='button'>Rare</button></a></li>
+            <li><a className='rarity-btn' href='#superRare'><button className='button'>Super Rare</button></a></li>
+            <li><a className='rarity-btn' href='#parallel'><button className='button'>Parallel</button></a></li>
+            <li><a className='rarity-btn' href='#secret'><button className='button'>Secret Rare</button></a></li>
           </ul>
 
           <h2 id="common">

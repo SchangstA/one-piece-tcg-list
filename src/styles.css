@@ -100,7 +100,7 @@ h2 {
 
 /* buttons */
 
-button {
+.button {
   border: 2px solid black;
   border-radius: 2rem;
   font-size: 1rem;
@@ -168,4 +168,39 @@ button:hover {
   justify-content: space-between;
   padding-inline: 7rem;
   font-size: 1.5rem;
+}
+
+/* CSS for the Prev and Next Buttons */
+.prev-btn,
+.next-btn {
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  cursor: pointer;
+  margin-inline: 4rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.prev-btn {
+  border-right: 1rem solid slateblue;
+  left: 10px;
+}
+
+.next-btn {
+  border-left: 1rem solid slateblue;
+  right: 10px;
+}
+
+.on-close-btn {
+  position: relative;
+  bottom: 18rem;
+  left: 35rem;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 10px;
 }

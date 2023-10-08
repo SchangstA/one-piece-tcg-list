@@ -21,22 +21,22 @@ function App() {
           path="/releasedsets/*" 
           element={<ReleasedSets />} 
           />
-          <Route 
-          path="/romancedawn" 
-          element={<RomanceDawn />} 
-          />
-          <Route 
-          path="/paramountwar" 
-          element={<ParamountWar />} 
-          />
-          <Route 
-          path="/pillarsofstrength" 
-          element={<PillarsofStrength />} 
-          />
-                    <Route 
-          path="/kingdomsofintrigue" 
-          element={<KingdomsofIntrigue />} 
-          />
+            <Route 
+            path="/romancedawn" 
+            element={<RomanceDawn />} 
+            />
+            <Route 
+            path="/paramountwar" 
+            element={<ParamountWar />} 
+            />
+            <Route 
+            path="/pillarsofstrength" 
+            element={<PillarsofStrength />} 
+            />
+            <Route 
+            path="/kingdomsofintrigue" 
+            element={<KingdomsofIntrigue />} 
+            />
         </Routes>
       </div>
     </>

@@ -171,93 +171,151 @@ export default function RomanceDawn() {
       "https://product-images.tcgplayer.com/fit-in/437x437/454669.jpg"
     ];
       
+      const allCardArrays = [common, uncommon, leader, rare, superRare, parallel, secret];
+      const [currentCardArrayIndex, setCurrentCardArrayIndex] = useState(0);
+
       const [expandedImage, setExpandedImage] = useState(null);
+      const [currentImageIndex, setCurrentImageIndex] = useState(null);
   
-      const commonElements = common.map((url, op01C) => (
+      const commonElements = common.map((url, index) => (
         <img
           className='card-image'
-          key={op01C}
+          key={index}
           src={url}
-          alt={`${op01C}`}
-          onClick={() => setExpandedImage(url)}
+          alt={`${index}`}
+          onClick={() => {
+            setExpandedImage(url);
+            setCurrentImageIndex(index);
+          }}
         />
       ));
 
-      const uncommonElements = uncommon.map((url, op01UC) => (
+      const uncommonElements = uncommon.map((url, index) => (
         <img
           className='card-image'
-          key={op01UC}
+          key={index}
           src={url}
-          alt={`${op01UC}`}
-          onClick={() => setExpandedImage(url)}
+          alt={`${index}`}
+          onClick={() => {
+            setExpandedImage(url);
+            setCurrentImageIndex(index);
+          }}
         />
       ));
 
-      const leaderElements = leader.map((url, op01L) => (
+      const leaderElements = leader.map((url, index) => (
         <img
           className='card-image'
-          key={op01L}
+          key={index}
           src={url}
-          alt={`${op01L}`}
-          onClick={() => setExpandedImage(url)}
+          alt={`${index}`}
+          onClick={() => {
+            setExpandedImage(url);
+            setCurrentImageIndex(index);
+          }}
         />
       ));
 
-      const rareElements = rare.map((url, op01R) => (
+      const rareElements = rare.map((url, index) => (
         <img
           className='card-image'
-          key={op01R}
+          key={index}
           src={url}
-          alt={`${op01R}`}
-          onClick={() => setExpandedImage(url)}
+          alt={`${index}`}
+          onClick={() => {
+            setExpandedImage(url);
+            setCurrentImageIndex(index);
+          }}
         />
       ));
 
-      const superRareElements = superRare.map((url, op01SR) => (
+      const superRareElements = superRare.map((url, index) => (
         <img
           className='card-image'
-          key={op01SR}
+          key={index}
           src={url}
-          alt={`${op01SR}`}
-          onClick={() => setExpandedImage(url)}
+          alt={`${index}`}
+          onClick={() => {
+            setExpandedImage(url);
+            setCurrentImageIndex(index);
+          }}
         />
       ));
 
-      const parallelElements = parallel.map((url, op01P) => (
+      const parallelElements = parallel.map((url, index) => (
         <img
           className='card-image'
-          key={op01P}
+          key={index}
           src={url}
-          alt={`${op01P}`}
-          onClick={() => setExpandedImage(url)}
+          alt={`${index}`}
+          onClick={() => {
+            setExpandedImage(url);
+            setCurrentImageIndex(index);
+          }}
         />
       ));
 
-      const secretElements = secret.map((url, op01SEC) => (
+      const secretElements = secret.map((url, index) => (
         <img
           className='card-image'
-          key={op01SEC}
+          key={index}
           src={url}
-          alt={`${op01SEC}`}
-          onClick={() => setExpandedImage(url)}
+          alt={`${index}`}
+          onClick={() => {
+            setExpandedImage(url);
+            setCurrentImageIndex(index);
+          }}
         />
       ));
     
       const handleCloseExpandedImage = () => {
-        setExpandedImage(null);
+        setExpandedImage(null)
+      };
+
+      const handlePrevExpandedImage = () => {
+        if (currentImageIndex !== null && currentImageIndex >= 0) {
+          const newIndex = currentImageIndex - 1;
+          if (newIndex >= 0) {
+            setExpandedImage(allCardArrays[currentCardArrayIndex][newIndex]);
+            setCurrentImageIndex(newIndex);
+          } else {
+            // If at the beginning of the current array, go to the previous array
+            const prevArrayIndex = (currentCardArrayIndex - 1 + allCardArrays.length) % allCardArrays.length;
+            setCurrentCardArrayIndex(prevArrayIndex);
+            const lastIndexInPrevArray = allCardArrays[prevArrayIndex].length - 1;
+            setExpandedImage(allCardArrays[prevArrayIndex][lastIndexInPrevArray]);
+            setCurrentImageIndex(lastIndexInPrevArray);
+          }
+        }
       };
     
+      const handleNextExpandedImage = () => {
+        if (currentImageIndex !== null && currentImageIndex >= 0) {
+          const newIndex = currentImageIndex + 1;
+          if (newIndex < allCardArrays[currentCardArrayIndex].length) {
+            setExpandedImage(allCardArrays[currentCardArrayIndex][newIndex]);
+            setCurrentImageIndex(newIndex);
+          } else {
+            // If at the end of the current array, go to the next array
+            const nextArrayIndex = (currentCardArrayIndex + 1) % allCardArrays.length;
+            setCurrentCardArrayIndex(nextArrayIndex);
+            setExpandedImage(allCardArrays[nextArrayIndex][0]);
+            setCurrentImageIndex(0);
+          }
+        }
+      };
+      
       return (
         <>
           <img className='img-card' src='https://en.onepiece-cardgame.com/images/products/boosters/op01/mv_01.jpg?v3' alt='romance dawn set'></img>
           <ul className='rarity-links'>
-            <li><a className='rarity-btn' href='#common'><button>Common</button></a></li>
-            <li><a className='rarity-btn' href='#uncommon'><button>Uncommon</button></a></li>
-            <li><a className='rarity-btn' href='#leader'><button>Leader</button></a></li>
-            <li><a className='rarity-btn' href='#rare'><button>Rare</button></a></li>
-            <li><a className='rarity-btn' href='#superRare'><button>Super Rare</button></a></li>
-            <li><a className='rarity-btn' href='#parallel'><button>Parallel</button></a></li>
-            <li><a className='rarity-btn' href='#secret'><button>Secret Rare</button></a></li>
+            <li><a className='rarity-btn' href='#common'><button className='button'>Common</button></a></li>
+            <li><a className='rarity-btn' href='#uncommon'><button className='button'>Uncommon</button></a></li>
+            <li><a className='rarity-btn' href='#leader'><button className='button'>Leader</button></a></li>
+            <li><a className='rarity-btn' href='#rare'><button className='button'>Rare</button></a></li>
+            <li><a className='rarity-btn' href='#superRare'><button className='button'>Super Rare</button></a></li>
+            <li><a className='rarity-btn' href='#parallel'><button className='button'>Parallel</button></a></li>
+            <li><a className='rarity-btn' href='#secret'><button className='button'>Secret Rare</button></a></li>
           </ul>
 
           <h2 id="common">
@@ -288,9 +346,14 @@ export default function RomanceDawn() {
             Secret
           </h2>
           <div className='card'>{secretElements}</div>
+          
           {/* Render the expanded image if one is selected */}
           {expandedImage && (
-            <ExpandedImage imageUrl={expandedImage} onClose={handleCloseExpandedImage} />
+            <ExpandedImage 
+            imageUrl={expandedImage} 
+            onClose={handleCloseExpandedImage} 
+            onPrev={handlePrevExpandedImage} 
+            onNext={handleNextExpandedImage}/>
           )}
         </>
       );
