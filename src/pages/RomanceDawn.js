@@ -174,99 +174,123 @@ export default function RomanceDawn() {
       const allCardArrays = [common, uncommon, leader, rare, superRare, parallel, secret];
       const [currentCardArrayIndex, setCurrentCardArrayIndex] = useState(0);
 
+      // Initialize a separate cardIndex counter
+      let cardIndexCounter = 0;
+
       const [expandedImage, setExpandedImage] = useState(null);
       const [currentImageIndex, setCurrentImageIndex] = useState(null);
-  
-      const commonElements = common.map((url, index) => (
-        <img
-          className='card-image'
-          key={index}
-          src={url}
-          alt={`${index}`}
-          onClick={() => {
-            setExpandedImage(url);
-            setCurrentImageIndex(index);
-          }}
-        />
-      ));
 
-      const uncommonElements = uncommon.map((url, index) => (
-        <img
-          className='card-image'
-          key={index}
-          src={url}
-          alt={`${index}`}
-          onClick={() => {
-            setExpandedImage(url);
-            setCurrentImageIndex(index);
-          }}
-        />
-      ));
+      const commonElements = common.map((url, index) => {
+        return (
+          <img
+            className='card-image'
+            key={index}
+            src={url}
+            alt={`${index}`}
+            onClick={() => {
+              setExpandedImage(url);
+              setCurrentImageIndex(index);
+              setCurrentCardArrayIndex(0);
+            }}
+          />
+        );
+      });
 
-      const leaderElements = leader.map((url, index) => (
-        <img
-          className='card-image'
-          key={index}
-          src={url}
-          alt={`${index}`}
-          onClick={() => {
-            setExpandedImage(url);
-            setCurrentImageIndex(index);
-          }}
-        />
-      ));
+      const uncommonElements = uncommon.map((url, index) => {
+        return (
+          <img
+            className='card-image'
+            key={index}
+            src={url}
+            alt={`${index}`}
+            onClick={() => {
+              setExpandedImage(url);
+              setCurrentImageIndex(index);
+              setCurrentCardArrayIndex(1);
+            }}
+          />
+        );
+      });
+      
+      const leaderElements = leader.map((url, index) => {
+        return (
+          <img
+            className='card-image'
+            key={index}
+            src={url}
+            alt={`${index}`}
+            onClick={() => {
+              setExpandedImage(url);
+              setCurrentImageIndex(index);
+              setCurrentCardArrayIndex(2);
+            }}
+          />
+        );
+      });
 
-      const rareElements = rare.map((url, index) => (
-        <img
-          className='card-image'
-          key={index}
-          src={url}
-          alt={`${index}`}
-          onClick={() => {
-            setExpandedImage(url);
-            setCurrentImageIndex(index);
-          }}
-        />
-      ));
+      const rareElements = rare.map((url, index) => {
+        return (
+          <img
+            className='card-image'
+            key={index}
+            src={url}
+            alt={`${index}`}
+            onClick={() => {
+              setExpandedImage(url);
+              setCurrentImageIndex(index);
+              setCurrentCardArrayIndex(3);
+            }}
+          />
+        );
+      });
 
-      const superRareElements = superRare.map((url, index) => (
-        <img
-          className='card-image'
-          key={index}
-          src={url}
-          alt={`${index}`}
-          onClick={() => {
-            setExpandedImage(url);
-            setCurrentImageIndex(index);
-          }}
-        />
-      ));
+      const superRareElements = superRare.map((url, index) => {
+        return (
+          <img
+            className='card-image'
+            key={index}
+            src={url}
+            alt={`${index}`}
+            onClick={() => {
+              setExpandedImage(url);
+              setCurrentImageIndex(index);
+              setCurrentCardArrayIndex(4);
+            }}
+          />
+        );
+      });
 
-      const parallelElements = parallel.map((url, index) => (
-        <img
-          className='card-image'
-          key={index}
-          src={url}
-          alt={`${index}`}
-          onClick={() => {
-            setExpandedImage(url);
-            setCurrentImageIndex(index);
-          }}
-        />
-      ));
+      const parallelElements = parallel.map((url, index) => {
+        return (
+          <img
+            className='card-image'
+            key={index}
+            src={url}
+            alt={`${index}`}
+            onClick={() => {
+              setExpandedImage(url);
+              setCurrentImageIndex(index);
+              setCurrentCardArrayIndex(5);
+            }}
+          />
+        );
+      });
 
-      const secretElements = secret.map((url, index) => (
-        <img
-          className='card-image'
-          key={index}
-          src={url}
-          alt={`${index}`}
-          onClick={() => {
-            setExpandedImage(url);
-            setCurrentImageIndex(index);
-          }}
-        />
-      ));
+      const secretElements = secret.map((url, index) => {
+        return (
+          <img
+            className='card-image'
+            key={index}
+            src={url}
+            alt={`${index}`}
+            onClick={() => {
+              setExpandedImage(url);
+              setCurrentImageIndex(index);
+              setCurrentCardArrayIndex(6);
+            }}
+          />
+        );
+      });
     
       const handleCloseExpandedImage = () => {
         setExpandedImage(null)
@@ -290,7 +314,7 @@ export default function RomanceDawn() {
       };
     
       const handleNextExpandedImage = () => {
-        if (currentImageIndex !== null && currentImageIndex >= 0) {
+          if (currentImageIndex !== null && currentImageIndex >= 0 && currentCardArrayIndex !==null) {
           const newIndex = currentImageIndex + 1;
           if (newIndex < allCardArrays[currentCardArrayIndex].length) {
             setExpandedImage(allCardArrays[currentCardArrayIndex][newIndex]);
@@ -300,7 +324,7 @@ export default function RomanceDawn() {
             const nextArrayIndex = (currentCardArrayIndex + 1) % allCardArrays.length;
             setCurrentCardArrayIndex(nextArrayIndex);
             setExpandedImage(allCardArrays[nextArrayIndex][0]);
-            setCurrentImageIndex(0);
+            setCurrentImageIndex(nextArrayIndex);
           }
         }
       };
