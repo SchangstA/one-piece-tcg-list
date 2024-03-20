@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import Cards from '../CardJson/RomanceDawn.json';
 import CheckboxFilter from '../components/CheckboxFilter';
 import ExpandedImage from '../components/ExpandedImage';
+import MagnifyingGlass from '../images/magnifying-glass.svg'
+import PlusIcon from '../images/plus-icon.svg'
+import MinusIcon from '../images/minus-icon.svg'
 
 const DeckBuilder = () => {
   const [expandedImage, setExpandedImage] = useState(null);
@@ -69,20 +72,20 @@ const DeckBuilder = () => {
               <div className='vertical-grid'>
                 <div id='icons-background'>
                   <img  
-                    src='./images/magnifying-glass.svg' 
+                    src={MagnifyingGlass} 
                     alt='zoom in'
                     className='card-icons'
                     onClick={() => setZoomCard(card.imgUrl)} 
                   />
                   <img  
-                    src='./images/plus-icon.svg' 
+                    src={PlusIcon} 
                     alt='add card'
                     className='card-icons'
                     onClick={() => increment(index, deckIndex)}  // Pass deckIndex and cardIndex
                   />
 
                   <img  
-                    src='./images/minus-icon.svg' 
+                    src={MinusIcon}
                     alt='minus card'
                     className='card-icons'
                     onClick={() => increment()} 
