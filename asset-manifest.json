@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/one-piece-tcg-list/static/css/main.d386dd2b.css",
+    "main.js": "/one-piece-tcg-list/static/js/main.f2eb7d9a.js",
+    "static/media/deckeditbackground.jpg": "/one-piece-tcg-list/static/media/deckeditbackground.aebacf4d0e145db83eb3.jpg",
+    "index.html": "/one-piece-tcg-list/index.html",
+    "main.d386dd2b.css.map": "/one-piece-tcg-list/static/css/main.d386dd2b.css.map",
+    "main.f2eb7d9a.js.map": "/one-piece-tcg-list/static/js/main.f2eb7d9a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d386dd2b.css",
+    "static/js/main.f2eb7d9a.js"
+  ]
+}
