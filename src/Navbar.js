@@ -15,11 +15,23 @@ export default function Navbar() {
         </CustomLink>
         <CustomLink 
         to="/releasedsets">
-          Released Sets
+          Sets Database
         </CustomLink>
         <CustomLink 
-        to="/upcomingsets">
-          Upcoming Sets
+          to="/deckdatabase">Deck Database
+        </CustomLink>
+        <CustomLink 
+          to="/carddatabase">Card Database
+        </CustomLink>
+        <CustomLink 
+          to="/deckbuilder">
+            <img className="deck-icon" src="https://api.iconify.design/bx:layer.svg" alt="login" />
+              Deck Builder
+        </CustomLink>
+        <CustomLink 
+          to="/login">
+            <img className="login-icon" src="https://api.iconify.design/line-md:account.svg" alt="login" />
+              Sign In
         </CustomLink>
       </ul>
     </nav>

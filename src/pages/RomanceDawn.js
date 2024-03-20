@@ -174,9 +174,6 @@ export default function RomanceDawn() {
       const allCardArrays = [common, uncommon, leader, rare, superRare, parallel, secret];
       const [currentCardArrayIndex, setCurrentCardArrayIndex] = useState(0);
 
-      // Initialize a separate cardIndex counter
-      let cardIndexCounter = 0;
-
       const [expandedImage, setExpandedImage] = useState(null);
       const [currentImageIndex, setCurrentImageIndex] = useState(null);
 
