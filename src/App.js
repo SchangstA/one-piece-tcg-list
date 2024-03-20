@@ -59,6 +59,13 @@ import Test from "./pages/Test"
               element={<Test />}
             />
           </Routes>
+          <div className='background-bar'>
+          <img 
+            className='img-card' 
+            src='https://wallpapercave.com/wp/eIfaYQb.jpg' 
+            alt='romance dawn set' 
+          />
+        </div>
         </div>
       </>
     )
